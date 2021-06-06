@@ -42,7 +42,7 @@ public class TaskControllerTest {
 	}
 
 	@Test
-	public void naoDeveSalvarTarefaSemData() {
+	public void naoSalvarTarefaSemData() {
 		Task todo = new Task();
 		todo.setTask("Descrição");
 		try {
@@ -72,7 +72,6 @@ public class TaskControllerTest {
 		todo.setTask("Descrição");
 		todo.setDueDate(LocalDate.now());
 		controller.save(todo);
-		
 		Mockito.verify(taskRepo).save(todo);
 
 	}
