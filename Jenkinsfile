@@ -54,8 +54,15 @@ pipeline {
                     bat 'mvn clean package'
                     deploy adapters: [tomcat8(credentialsId: 'LoginTomCat', path: '', url: 'http://localhost:8001/')], contextPath: 'tasks', war: 'target/tasks.war'
                 }
-            } 
-                
+            }         
+        }
+        stage ('Functional Test'){
+            steps{
+                dir('functional-test'){
+                git credentialsId: 'GitLogin', url: 'https://github.com/raquelroque/tasks-functional-tests'
+                bat 'mvn test'
+                }
+            }
         }
     }
 }
