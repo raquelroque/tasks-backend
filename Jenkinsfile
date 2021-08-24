@@ -39,7 +39,6 @@ pipeline {
                 }
                 
             }
-
         stage ('API Test'){
             steps{
                 git 'https://github.com/raquelroque/tasks-api-test-integacao'
@@ -47,6 +46,7 @@ pipeline {
             }
         }
     }
+}
 
 
 
