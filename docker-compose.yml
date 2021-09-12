@@ -30,7 +30,8 @@ services:
       - DATABASE_PORT=5432
       - DATABASE_USER=postgres
       - DATABASE_PASSWD=passwd
-      #- DATABASE_UPDATE=none
+      - DATABASE_UPDATE=none 
+      #ao enviar none vai parar de criar o banco segundo configuração em application.properties desse projeto 
     depends_on:
       - db
 
